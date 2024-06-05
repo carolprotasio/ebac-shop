@@ -1,0 +1,17 @@
+{
+  "name": "ebac-shop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run",
+    "cy:open": "npx cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^13.11.0",
+    "faker": "^6.6.6"
+  }
+}
