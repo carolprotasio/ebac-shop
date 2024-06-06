@@ -16,7 +16,7 @@ describe('Funcionalidade de Cadastro de Usuário', () => {
 
         cy.registerUser(email, password)
     });
-    it.only('Não cadastrar com email repetido', () => {
+    it('Não cadastrar com email repetido', () => {
         
         cy.fixture('user').then(user => {
             cy.get('#reg_email').type(user.email);

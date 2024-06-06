@@ -13,7 +13,7 @@ describe('Funcionalidade de Login e seu fluxo', () => {
         cy.validLogin()
         
     });
-    it.only('Senha inválida - Deve apresentar erro', () => {     
+    it('Senha inválida - Deve apresentar erro', () => {     
         const password = faker.internet.password();   
         cy.invalidPassword(password)
         

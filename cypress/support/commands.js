@@ -40,10 +40,10 @@ Cypress.Commands.add('invalidPassword', (password) => {
   cy.fixture('user').then(user => { 
     cy.get('#username').type(user.email);
     cy.get('#password').type(password);
-  cy.get('#customer_login > div:nth-child(1) > form > input.button').click();
+    cy.get('#customer_login > div:nth-child(1) > form > input.button').click();
 
-  cy.get('.woocommerce-error > li')
-    .should('contain.text', `Erro: A senha fornecida para o e-mail ${user.email} está incorreta. `);
+    cy.get('.woocommerce-error > li')
+      .should('contain.text', `Erro: A senha fornecida para o e-mail ${user.email} está incorreta. `);
   })
 
 });
