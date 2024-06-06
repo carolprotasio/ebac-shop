@@ -4,19 +4,14 @@
   "main": "index.js",
   "scripts": {
     "cy:run": "npx cypress run",
-    "cy:open": "npx cypress open",
-    "allure-chro": "cypress run --browser chrome --env allure=true",
-    "allure-fire": "npx cypress run --browser firefox --env allure=true",
-    "allure-elec": "npx cypress run --browser electron --env allure=true",
-    "allure:repo": "allure generate allure-results --clean -o allure-report",
-    "allure:clea": "rm -r allure-results/ allure-report cypress/screenshots || true"
+    "cy:open": "npx cypress open"
+    
   },
   "keywords": [],
   "author": "Carol Protásio",
   "license": "MIT",
   "description": "",
-  "devDependencies": {
-    "@shelex/cypress-allure-plugin": "^2.40.2",
+  "devDependencies": {    
     "cypress": "^13.11.0",
     "faker": "^5.5.3"
   }
