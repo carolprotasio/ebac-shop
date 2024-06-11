@@ -66,7 +66,7 @@ describe('Funcionalidade: Adicionar Produtos no Carrinho', () => {
         
     });
 
-    it.only('Quantidade de itens no cart deve ser igual a quantidade na barra de navegação', () => {  
+    it('Quantidade de itens no cart deve ser igual a quantidade na barra de navegação', () => {  
         cy.deleteCart()
               
         cy.addProductToCart(7, 'M', 'Green');

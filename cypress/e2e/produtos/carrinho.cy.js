@@ -66,7 +66,7 @@ describe('Funcionalidade: Carrinho de compra e seu fluxo', () => {
         cy.get('.quantity > .input-text').should('have.value', '2')  
         
     });
-    it.only('Deve remover o produto do carrinho depois de adicionado', () => { 
+    it('Deve remover o produto do carrinho depois de adicionado na tela do cart', () => { 
         cy.deleteCart()
         cy.addProductToCart(7, 'M', 'Green');
 
@@ -75,6 +75,19 @@ describe('Funcionalidade: Carrinho de compra e seu fluxo', () => {
         cy.get('.product-remove > .remove').click();
         cy.get('.cart-empty').should('contain.text', 'Seu carrinho está vazio');
         
+    });
+    it('Estando o carrinho vazio deve mostar aviso na navegação e tela carrinho', () => { 
+        cy.deleteCart()
+        cy.visit('/carrinho/');
+
+        cy.get('.cart-empty').should('contain.text', 'Seu carrinho está vazio');
+        cy.get('#cart > a > span.mini-cart-items')
+        .invoke('text')
+        .then((text) => {
+          const itemCount = text.trim();
+          expect(itemCount).to.eq('0');
+        }) 
+
     });
 
 });

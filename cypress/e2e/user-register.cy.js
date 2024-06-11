@@ -11,7 +11,7 @@ describe('Funcionalidade de Cadastro de Usuário', () => {
     });
 
     it('Cadastrar com dados validos com Sucesso', () => {
-        const email = faker.internet.email();
+        const email = faker.internet.email().toLowerCase();
         const password = faker.internet.password();
 
         cy.registerUser(email, password)

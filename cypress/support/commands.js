@@ -74,3 +74,63 @@ Cypress.Commands.add('loginAndLostPassword', (password) => {
   })
 
 });
+
+Cypress.Commands.add('addToWishlist', (productIndex) => {
+  cy.visit('/produtos/');
+  cy.get(`.product-block`).eq(productIndex).click();
+  cy.get('.summary > .yith-wcwl-add-to-wishlist > .yith-wcwl-add-button > .add_to_wishlist').click();  
+  cy.wait(200)
+  cy.visit('/lista-de-desejos/');
+
+  cy.get('.wishlist_table tbody tr:first-child .product-name').invoke('text').as('productName');
+ 
+});
+
+
+Cypress.Commands.add('cleanWishlist', () => {
+  cy.visit('/lista-de-desejos/');
+
+  function removeWishlistItems() {
+    cy.get('.wishlist_table tbody tr').then(($rows) => {
+      if ($rows.length > 0) {
+        removeItem($rows);
+      } else {
+        cy.get('.wishlist-empty').should('be.visible');
+      }
+    });
+  }
+
+  function removeItem($rows) {
+    if ($rows.length > 0) {
+      cy.wrap($rows[0]).then($row => {
+        if ($row.find('.remove > .fa').length > 0) {
+          cy.wrap($row)
+            .find('.remove > .fa')
+            .click({ force: true })
+            .then(() => {
+              cy.wait(1000); // Aguarda 1 segundo para garantir que o item foi removido
+              cy.get('.wishlist_table tbody tr').then(($updatedRows) => {
+                if ($updatedRows.length > 0) {
+                  removeItem($updatedRows);
+                } else {
+                  cy.get('.wishlist-empty').should('be.visible');
+                }
+              });
+            });
+        } else {
+          cy.get('.wishlist-empty').should('be.visible');
+        }
+      });
+    } else {
+      cy.get('.wishlist-empty').should('be.visible');
+    }
+  }
+
+  cy.get('body').then(($body) => {
+    if ($body.find('.wishlist-empty').length > 0) {
+      cy.log('A lista de desejos já está vazia. Nenhum item para remover.');
+    } else {
+      removeWishlistItems();
+    }
+  });
+});

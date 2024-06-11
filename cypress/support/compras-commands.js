@@ -2,6 +2,9 @@ Cypress.Commands.add('addProductToCart', (productIndex, size, color) => {
     cy.get('[class="product-block grid"]')
         .eq(productIndex)
         .click();
+     cy.get('.product_title').invoke('text').then((productName) => {
+        cy.wrap(productName).as('productName');
+    });
     
     cy.get(`.button-variable-item-${size}`).click();
     cy.get(`.button-variable-item-${color}`).click();
@@ -45,6 +48,8 @@ Cypress.Commands.add('deleteCart', () => {
         cy.visit('/produtos/');
     });
 });
+
+
 
 
 

@@ -24,25 +24,13 @@ it('Deve alterar/cadastrar o Endereço de Faturamento com sucesso', () => {
       cy.get(':nth-child(1) > .title > .edit').click();
       cy.url().should('eq','http://lojaebac.ebaconline.art.br/minha-conta/edit-address/faturamento/');
 
-        cy.get('#billing_first_name').clear().type(userData.firstName);
-        cy.get('#billing_last_name').clear().type(userData.lastName);
-        cy.get('#billing_company').clear().type(userData.company);
-        cy.get('#select2-billing_country-container').type(`${userData.country}{enter}`);
-        cy.get('#billing_address_1').clear({ force: true }).type(userData.address);
-        cy.get('#billing_city').clear({ force: true }).type(userData.city);
-
-        cy.get('#select2-billing_state-container').click();
-        cy.get('.select2-dropdown').contains(userData.state).click(); 
-
-        cy.get('#billing_postcode').clear({ force: true }).type(userData.zipCode);
-        cy.get('#billing_phone').clear({ force: true }).type(userData.phoneNumber);
-
+      cy.fillBillingDetails(userData);
         cy.get('.button').click();
 
         cy.get('.woocommerce-message').should('contain.text', 'Endereço alterado com sucesso.')
         
     });
-it.only('Deve alterar/cadastrar o Endereço de Entrega com sucesso', () => { 
+it('Deve alterar/cadastrar o Endereço de Entrega com sucesso', () => { 
 
       cy.get(' div.col2-set.row.addresses > div:nth-child(2) > header > a ').click();
       cy.url().should('eq','http://lojaebac.ebaconline.art.br/minha-conta/edit-address/entrega/');
