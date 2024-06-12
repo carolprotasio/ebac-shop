@@ -35,7 +35,7 @@ O projeto está estruturado em diferentes diretórios, cada um representando uma
 | Quantidade de itens no carrinho deve ser igual à quantidade na barra de navegação | Teste para verificar se a quantidade de itens no carrinho corresponde à quantidade exibida na barra de navegação. |
 | Deve avaliar o produto com sucesso | Teste para garantir que um produto pode ser avaliado com sucesso. |
 
-![Loja Ebac](cypress\e2e\assets\sec-produto.png)
+![Loja Ebac](https://github.com/carolprotasio/ebac-shop/blob/main/cypress/e2e/assets/sec-produto.png)
 
 
 | Funcionalidade | Descrição |
@@ -48,7 +48,7 @@ O projeto está estruturado em diferentes diretórios, cada um representando uma
 | Estando o carrinho vazio deve mostrar aviso na navegação e tela do carrinho | Teste para verificar se um aviso é exibido quando o carrinho está vazio, tanto na navegação quanto na tela do carrinho. |
 | Adicionar cupom inválido deve receber mensagem de erro | Teste para verificar se uma mensagem de erro é exibida ao adicionar um cupom inválido. |
 
-![Loja Ebac](cypress\e2e\assets\sec-carrinho.png)
+![Loja Ebac](https://github.com/carolprotasio/ebac-shop/blob/main/cypress/e2e/assets/sec-carrinho.png)
 
 | Funcionalidade | Descrição |
 | -------------- | --------- |
@@ -57,7 +57,7 @@ O projeto está estruturado em diferentes diretórios, cada um representando uma
 | Deve realizar o checkout: Método de Pagamento => Cheque | Teste para garantir que o checkout pode ser realizado com o método de pagamento por cheque. |
 | Deve realizar o checkout: Método de Pagamento => Pagamento na Entrega | Teste para garantir que o checkout pode ser realizado com o método de pagamento na entrega. |
 
-![Loja Ebac](cypress\e2e\assets\sec-checkout.png)
+![Loja Ebac](https://github.com/carolprotasio/ebac-shop/blob/main/cypress/e2e/assets/sec-checkout.png)
 
 | Funcionalidade | Descrição |
 | -------------- | --------- |
@@ -67,7 +67,7 @@ O projeto está estruturado em diferentes diretórios, cada um representando uma
 | Alterar/cadastrar o Endereço de Faturamento com sucesso | Teste para garantir que o usuário possa alterar ou cadastrar o endereço de faturamento com sucesso, seguindo o fluxo correspondente. |
 | Alterar/cadastrar o Endereço de Entrega com sucesso | Teste para garantir que o usuário possa alterar ou cadastrar o endereço de entrega com sucesso, seguindo o fluxo correspondente. |
 
-![Loja Ebac](cypress\e2e\assets\sec-minha.png)
+![Loja Ebac](https://github.com/carolprotasio/ebac-shop/blob/main/cypress/e2e/assets/sec-minha.png)
 
 | Funcionalidade | Descrição |
 | -------------- | --------- |
@@ -75,7 +75,7 @@ O projeto está estruturado em diferentes diretórios, cada um representando uma
 | Buscar um item específico na busca | Teste para garantir que o usuário logado possa buscar um item específico usando a funcionalidade de busca na barra de navegação, e que a busca falhe corretamente caso o item não seja encontrado. |
 | Selecionar "home-3" na barra de navegação | Teste para garantir que o usuário logado possa selecionar a opção "home-3" na barra de navegação e seja direcionado corretamente para a página correspondente. |
 
-![Loja Ebac](cypress\e2e\assets\sec-navbar.png)
+![Loja Ebac](https://github.com/carolprotasio/ebac-shop/blob/main/cypress/e2e/assets/sec-navbar.png)
 
 | Funcionalidade | Descrição |
 | -------------- | --------- |
@@ -84,7 +84,7 @@ O projeto está estruturado em diferentes diretórios, cada um representando uma
 | Deve adicionar 5 itens na Wishlist com sucesso | Teste para verificar se é possível adicionar 5 itens na Wishlist com sucesso. |
 | Deve apagar toda lista da Wishlist com sucesso | Teste para garantir que é possível apagar toda a lista da Wishlist com sucesso. |
 
-![Loja Ebac](cypress\e2e\assets\wishlist.png)
+![Loja Ebac](https://github.com/carolprotasio/ebac-shop/blob/main/cypress/e2e/assets/wishlist.png)
 
 ## Como Executar o Projeto
 Para executar o projeto localmente, siga os passos abaixo:
