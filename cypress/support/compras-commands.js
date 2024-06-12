@@ -37,8 +37,9 @@ Cypress.Commands.add('deleteCart', () => {
         if ($main.find('.cart_item').length > 0) {
             cy.get('.product-remove > .remove').each(($button, index, $buttons) => {
                 cy.wrap($button).click({ force: true });
-                // Se for o último botão de remover, verifique se o carrinho está vazio
+                
                 if (index === $buttons.length - 1) {
+                    cy.wait(200)
                     cy.get('.cart-empty').should('be.visible');
                 }
             });

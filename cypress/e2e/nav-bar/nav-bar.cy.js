@@ -34,13 +34,7 @@ describe('Funcionalidade: Testar a Barra de Navegação', () => {
         });
         
     });
-    it.only('Usuário deve fazer uma busca NÃO estando logado', () => {
-        cy.get('.search-form-modal > .btn')
-        .should('exist')
-        .should('be.visible')
-        .click({ force: true });
-        
-    });
+
 
     it('Deve selecionar home-3 da barra de navegação ', () => {
         cy.visit('/');

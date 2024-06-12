@@ -9,7 +9,7 @@ describe('Funcionalidade: Carrinho de compra e seu fluxo', () => {
         cy.visit('/carrinho/');
         
     });
-    it('Adicionar 3 itens ao carrinho e o valor total dever ser igual a soma total dos 3 itens', () => {  
+    it('Adicionar 3 produtos ao carrinho e o valor total dever ser igual a soma total dos 3 itens', () => {  
         cy.deleteCart()              
         cy.addProductToCart(7, 'M', 'Green');
         cy.addProductToCart(5, '36', 'Black');
@@ -34,27 +34,13 @@ describe('Funcionalidade: Carrinho de compra e seu fluxo', () => {
         
     });
 
-    it('Adicionar cupom invalido deve receber msg de erro', () => {  
+    
+    it('Deletar carrinho', () => { 
         cy.deleteCart()
-              
-        cy.addProductToCart(7, 'M', 'Green');
-
-        cy.visit('/carrinho/');
-
-        const invalidCoupon = "invalido"
-        cy.get('#coupon_code').clear().type(invalidCoupon); 
-        cy.get("input[value='Apply Coupon']").click();       
-       
-        cy.get('#main > div > div.woocommerce-notices-wrapper > ul > li')
-          .invoke('text')
-          .then((text) => {
-            const couponText = text.trim();
-            expect(couponText).to.contain(`O cupom "${invalidCoupon}" não existe!` );
-          })         
-              
+    
         
     });
-    it('Adicionar 1 item de um produto adicionado no carrinho', () => { 
+    it('Adicionar 01 produto no carrinho', () => { 
         cy.deleteCart()
         cy.addProductToCart(7, 'M', 'Green');
 
@@ -88,6 +74,26 @@ describe('Funcionalidade: Carrinho de compra e seu fluxo', () => {
           expect(itemCount).to.eq('0');
         }) 
 
+    });
+    it('Adicionar cupom invalido deve receber msg de erro', () => {  
+        cy.deleteCart()
+              
+        cy.addProductToCart(7, 'M', 'Green');
+
+        cy.visit('/carrinho/');
+
+        const invalidCoupon = "invalido"
+        cy.get('#coupon_code').clear().type(invalidCoupon); 
+        cy.get("input[value='Apply Coupon']").click();       
+       
+        cy.get('#main > div > div.woocommerce-notices-wrapper > ul > li')
+          .invoke('text')
+          .then((text) => {
+            const couponText = text.trim();
+            expect(couponText).to.contain(`O cupom "${invalidCoupon}" não existe!` );
+          })         
+              
+        
     });
 
 });
