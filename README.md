@@ -95,7 +95,7 @@ Para executar o projeto localmente, siga os passos abaixo:
 
 2. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone https://github.com/carolprotasio/ebac-shop.git
 
 3. **Instale as dependências:**
     ```bash
